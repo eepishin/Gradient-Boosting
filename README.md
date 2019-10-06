@@ -322,7 +322,7 @@ There are **two** optimization problems in one iteration of algorithm: to find $
 
 Finding base algorithm approximating gradient:
 
-1. $b_t := \arg \min_b \sum_i^l(b(x_i) + L'(f_i, \space y_i))^2$
+1. <img src="https://render.githubusercontent.com/render/math?math=b_t := \arg \min_b \sum_i^l(b(x_i) + L'(f_i, \space y_i))^2">
 
 
 ```python
@@ -370,7 +370,7 @@ y_pred = DTR.predict(X_train)
 
 Solving optimization problem for alpha
 
-2. $\alpha_t := \arg \min_{\alpha>0} \sum_i^l L(f_i + \alpha b_t(x_i), \space y_i)$ 
+2. <img src="https://render.githubusercontent.com/render/math?math=\alpha_t := \arg \min_{\alpha>0} \sum_i^l L(f_i + \alpha b_t(x_i), \space y_i)"> 
 
 
 ```python
@@ -393,7 +393,7 @@ def L_a(alpha):
 
 Derivative of log loss wrt $\alpha$:
 
-$$\frac{d\big(-ylog(f_i+\alpha b_t(x_i) - (1-y)log(1-f_i-\alpha b_t (x_i))\big)}{d \alpha} = \frac{-y b_t(x_i)}{f_i+\alpha b_t(x_i)} + \frac{(1-y)b_t(x_i)}{1-f_i-\alpha b_t(x_i)}$$
+<img src="https://render.githubusercontent.com/render/math?math=\frac{d\big(-ylog(f_i+\alpha b_t(x_i) - (1-y)log(1-f_i-\alpha b_t (x_i))\big)}{d \alpha} = \frac{-y b_t(x_i)}{f_i+\alpha b_t(x_i)} + \frac{(1-y)b_t(x_i)}{1-f_i-\alpha b_t(x_i)}">
 
 
 ```python
@@ -493,7 +493,7 @@ for alpha in alphas_list:
 
 Updating the result of composition over the training sample:
 
-$f_i := f_i + \alpha_t b_t(x_i), \space i=1,...,l$
+<img src="https://render.githubusercontent.com/render/math?math=f_i := f_i + \alpha_t b_t(x_i), \space i=1,...,l">
 
 
 ```python
